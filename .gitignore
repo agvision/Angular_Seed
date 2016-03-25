@@ -1,9 +1,4 @@
 typings/
 node_modules/
-public/css/*
-public/img/*
-public/js/*
-public/templates/*
-public/index.html
 *.js
 *.js.map
