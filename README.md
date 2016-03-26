@@ -27,7 +27,7 @@ npm install
 npm run postinstall
 ```
 
-# How to use it
+## How to use it
 
 * In order to run typescript and gulp tasks and start a browser session
 
@@ -44,8 +44,3 @@ npm start
 
 npm run build
 ```
-
-
-
-
-
