@@ -1,7 +1,8 @@
 import {Component} 	from 'angular2/core';
 import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from 'angular2/router';
 
-import {RegisterComponent} from './register/register';
+import {LoginComponent} 	from './login/login';
+import {RegisterComponent} 	from './register/register';
 
 @Component({
     selector: 	'my-app',
@@ -10,12 +11,17 @@ import {RegisterComponent} from './register/register';
     providers: 	[ROUTER_PROVIDERS]
 })
 @RouteConfig([
-  	{
-    	path: '/register',
-    	name: 'Register',
-    	component: RegisterComponent,
-    	useAsDefault: true
-  	}
+	{
+		path: '/register',
+		name: 'Register',
+		component: RegisterComponent,
+		useAsDefault: true
+	},
+	{
+		path: '/login',
+		name: 'Login',
+		component: LoginComponent
+	}
 ])
 export class AppComponent 
 { 

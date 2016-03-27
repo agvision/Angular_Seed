@@ -2,15 +2,15 @@ import {Component} 	from 'angular2/core';
 import {User}		from '../../models/user';
 
 @Component({
-    selector: 'register',
-    templateUrl: 'components/register/register.html'
+    selector: 'login',
+    templateUrl: 'components/login/login.html'
 })
-export class RegisterComponent 
+export class LoginComponent 
 { 
 	public user = new User();
 
 	public onSubmit() 
 	{
-		this.user.register();
+		this.user.login();
 	}
 }
