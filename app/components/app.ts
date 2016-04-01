@@ -1,14 +1,21 @@
-import {Component} 	from 'angular2/core';
-import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from 'angular2/router';
+import {Component} 							from 'angular2/core';
+import {RouteConfig, ROUTER_DIRECTIVES}  	from 'angular2/router';
 
 import {LoginComponent} 	from './login/login';
 import {RegisterComponent} 	from './register/register';
+import {ProfileComponent} 	from './profile/profile';
 
 @Component({
     selector: 	'my-app',
-    template:	'<router-outlet></router-outlet>',
-    directives: [ROUTER_DIRECTIVES],
-    providers: 	[ROUTER_PROVIDERS]
+    template:	`
+    	<nav>
+    		<a [routerLink]="['Login']">Login</a>
+    		<a [routerLink]="['Register']">Register</a>
+    		<a [routerLink]="['Profile']">Profile</a>
+    	</nav>
+    	<router-outlet></router-outlet>
+    `,
+    directives: [ROUTER_DIRECTIVES]
 })
 @RouteConfig([
 	{
@@ -21,7 +28,12 @@ import {RegisterComponent} 	from './register/register';
 		path: '/login',
 		name: 'Login',
 		component: LoginComponent
-	}
+	},
+	{
+		path: '/profile',
+		name: 'Profile',
+		component: ProfileComponent
+	},
 ])
 export class AppComponent 
 { 

@@ -1,19 +1,50 @@
-export class User 
+import {Injectable} 	from 'angular2/core';
+import {HttpService}	from '../services/http';
+import {Model}			from './model';
+
+
+@Injectable()
+export class User extends Model
 {
 	public firstName: string = "";
 	public lastName: string  = "";
 	public email: string  	 = "";
 	public password: string  = "";
 
+	public constructor(private httpService: HttpService)
+	{
+		super();
+	}
+
+	public setAuthToken(token: string)
+	{
+		this.httpService.setAuthToken(token);
+	}
+
 	public register()
 	{
-		console.log("User Register");
-		console.log(this);
+		let params = this.buildParams([
+			'firstName',
+			'lastName',
+			'email',
+			'password'
+		]);
+
+		return this.httpService.sendRequest("POST", "/auth/register", params);
 	}
 
 	public login()
 	{
-		console.log("User Login");
-		console.log(this);
+		let params = this.buildParams([
+			'email',
+			'password'
+		]);
+
+		return this.httpService.sendRequest("POST", "/auth/login", params);
+	}
+
+	public getProfile()
+	{
+		return this.httpService.sendAuthRequest("GET", "/user");
 	}
 }
