@@ -9,6 +9,7 @@ var htmlmin       = require('gulp-htmlmin');
 var imagemin      = require('gulp-imagemin');
 var concat 		  = require('gulp-concat');
 var minify 	      = require('gulp-minify-css');
+var jsonmin 	  = require('gulp-jsonminify');
 var pngquant      = require('imagemin-pngquant');
 var versionAppend = require('gulp-version-append'); 
 
@@ -25,6 +26,17 @@ elixir.extend('scss', function(src, dest, output) {
 
     return this.queueTask('scss');
  });
+
+elixir.extend('jsonmin', function(src, dest) {
+
+	gulp.task('jsonmin', function () {
+	    return gulp.src(src)
+	        .pipe(jsonmin())
+	        .pipe(gulp.dest(dest));
+	});
+
+	return this.queueTask('jsonmin');
+});
 
 elixir.extend('concat', function(src, dest, output) {
 

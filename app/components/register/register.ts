@@ -1,6 +1,8 @@
 import {Component} 		from 'angular2/core';
 import {User}			from '../../models/user';
 
+import {TranslateService} from '../../services/translate';
+
 @Component({
     selector: 'register',
     templateUrl: 'components/register/register.html',
@@ -9,8 +11,9 @@ import {User}			from '../../models/user';
 export class RegisterComponent 
 { 
 
-	public constructor(public user: User)
+	public constructor(public user: User, public ts: TranslateService)
 	{
+		ts.load('components/register/strings', 'register');
 	}
 
 	public onSubmit() 

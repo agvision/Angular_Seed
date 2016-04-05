@@ -1,6 +1,8 @@
 import {Component} 	from 'angular2/core';
 import {User}		from '../../models/user';
 
+import {TranslateService} from '../../services/translate';
+
 @Component({
     selector: 'profile',
     templateUrl: 'components/profile/profile.html',
@@ -8,9 +10,9 @@ import {User}		from '../../models/user';
 })
 export class ProfileComponent 
 { 
-	public constructor(public user: User)
+	public constructor(public user: User, public ts: TranslateService)
 	{
-
+		ts.load('components/profile/strings', 'profile');
 	}
 
 	public onUserClick()

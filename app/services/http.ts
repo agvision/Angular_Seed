@@ -1,13 +1,12 @@
 import {Router} 	from 'angular2/router';
 import {Injectable} from 'angular2/core';
-import {Observable} from 'rxjs/Observable';
 import {Http, Response, Headers, RequestOptions} from 'angular2/http';
 
 @Injectable()
 export class HttpService
 {	
 	private requestURL = "http://localhost/agvision/Laravel_API/public/api";
-	private tokenLifetimeLimit = 10; 
+	private tokenLifetimeLimit = 3600; 
 	private invalidTokenErrors = new Set([
 		'absentToken',
 		'invalidToken',

@@ -1,12 +1,12 @@
 <div class="container">
 
     <form class="form-signin">
-        <h2 class="form-signin-heading">Login</h2>
+        <h2 class="form-signin-heading">{{ ts.get('login.title') }}</h2>
 
-        <input [(ngModel)]="user.email" type="text" class="form-control" placeholder="Email" required>
-        <input [(ngModel)]="user.password" type="password" class="form-control" placeholder="Password" required>
+        <input [(ngModel)]="user.email" type="text" class="form-control" [placeholder]="ts.get('login.email')" required>
+        <input [(ngModel)]="user.password" type="password" class="form-control" [placeholder]="ts.get('login.password')" required>
 
-        <div (click)="onSubmit()" class="btn btn-lg btn-primary btn-block">Login</div>
+        <div (click)="onSubmit()" class="btn btn-lg btn-primary btn-block">{{ ts.get('login.action') }}</div>
     </form>
     
 </div>
