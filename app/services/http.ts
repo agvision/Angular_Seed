@@ -72,8 +72,8 @@ export class HttpService
 	{
 		let tokenLifetime = this.getTokenLifetime();
 
-		if(tokenLifetime > this.tokenLifetimeLimit) {
-			// token lifetime limit excedeed
+		// check token lifetime
+		if (tokenLifetime > this.tokenLifetimeLimit) {
 			let params = new Map<string, any>();
 			params.set('token', this.getAuthToken());
 

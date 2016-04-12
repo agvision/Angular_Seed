@@ -6,24 +6,18 @@ Angular 2 Starter Pack.
 
 * Clone Repository
 ```
-#!bash
-
 git clone https://mihaicracan@bitbucket.org/agvision/angular_seed.git
 ```
 
 * Install Node Packages
 
 ```
-#!bash
-
 npm install
 ```
 
 * Run Postinstall Scripts
 
 ```
-#!bash
-
 npm run postinstall
 ```
 
@@ -32,15 +26,11 @@ npm run postinstall
 * In order to run typescript and gulp tasks and start a browser session
 
 ```
-#!bash
-
 npm start
 ```
 
 * In order to build your app for production run
 
 ```
-#!bash
-
 npm run build
 ```

@@ -17,8 +17,6 @@ export class TranslateService
 
 	public get(string:string, params:any)
 	{
-		if (this.strings.size == 0) return '';
-
 		let value = this.strings.get(string); 
 
 		return this.replaceParams(value, params);
@@ -96,6 +94,8 @@ export class TranslateService
 
 	private replaceParams(input:string, params:any)
 	{
+		if (!input) return '';
+
 		let output:string = input;
 
 		for (let key in params) {

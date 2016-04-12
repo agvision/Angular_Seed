@@ -1,6 +1,10 @@
 {
-	"title": "Login",
+	
 	"action": "Login",
 	"email": "Email",
-	"password": "Password"
+	"password": "Password",
+
+	"errors": {
+		"invalid_email": "Invalid Email"
+	}
 }

@@ -1,12 +1,11 @@
 var elixir = require('laravel-elixir');
 
 elixir.config.sourcemaps = false;
-elixir.config.assetsDir = "app/";
-elixir.config.registerWatcher("copy",       "app/fonts/**/*");
 elixir.config.registerWatcher("scss",       "app/components/**/*.scss");
-elixir.config.registerWatcher("imagemin",   "app/img/**/*");
 elixir.config.registerWatcher("jsonmin",    "app/**/*.json");
 elixir.config.registerWatcher("uglify",     "public/js/*.js");
+elixir.config.registerWatcher("copy",       "assets/fonts/**/*");
+elixir.config.registerWatcher("imagemin",   "assets/img/**/*");
 elixir.config.registerWatcher("htmlmin",    ["app/components/**/*.html", "app/index.html"]);
 
 require("./elixir-tasks");
@@ -15,7 +14,7 @@ elixir(function(mix) {
     mix
         .copy([
             'node_modules/bootstrap/dist/fonts',
-            'app/fonts'
+            'assets/fonts'
         ], 'public/fonts')
 
         .scss([
@@ -41,5 +40,5 @@ elixir(function(mix) {
         .uglify('public/js/*.js', 'public/js')
         .htmlmin('app/**/*.html', 'public')
         .jsonmin('app/**/*.json', 'public')
-        .imagemin('app/img/**/*', 'public/img');
+        .imagemin('assets/img/**/*', 'public/img');
 });
